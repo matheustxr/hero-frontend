@@ -3,8 +3,10 @@ import type  { Hero } from '@/types/hero.model';
 import type  { HeroFormData } from '@/types/hero-form-data.model';
 import type  { Superpower } from '@/types/superpower.model';
 
+const apiBaseUrl = import.meta.env.VITE_API_URL;
+
 const apiClient = axios.create({
-  baseURL: 'https://localhost:7144/api',
+  baseURL: `${apiBaseUrl}/api`,
 });
 
 export const getAllHeroes = () => apiClient.get<Hero[]>('/heroes');
