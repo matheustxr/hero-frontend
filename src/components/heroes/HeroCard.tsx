@@ -27,14 +27,21 @@ export default function HeroCard({ hero, onDelete }: HeroCardProps) {
         <CardTitle>{hero.heroName}</CardTitle>
         <CardDescription>Nome: {hero.name}</CardDescription>
       </CardHeader>
-      <CardContent className="flex-grow">
-        <h4 className="font-semibold mb-2">Superpoderes:</h4>
+    <CardContent className="flex-grow">
+      <h4 className="font-semibold mb-2">Superpoderes:</h4>
+
+      {hero.superpowers && hero.superpowers.length > 0 ? (
         <ul className="list-disc list-inside text-sm">
           {hero.superpowers.map((power, index) => (
             <li key={index}>{power}</li>
           ))}
         </ul>
-      </CardContent>
+      ) : (
+        <p className="text-sm text-muted-foreground ">
+          Nenhum superpoder listado.
+        </p>
+      )}
+    </CardContent>
       <CardFooter className="flex justify-end gap-2">
         <Button variant="outline" asChild>
           <Link to={`/edit/${hero.id}`}>Editar</Link>
@@ -48,7 +55,7 @@ export default function HeroCard({ hero, onDelete }: HeroCardProps) {
           <AlertDialogContent>
             <AlertDialogHeader>
               <AlertDialogTitle>Você tem certeza absoluta?</AlertDialogTitle>
-              
+
               <AlertDialogDescription>
                 Essa ação não pode ser desfeita. Isso excluirá permanentemente o herói
                 "{hero.heroName}" e removerá seus dados de nossos servidores.
