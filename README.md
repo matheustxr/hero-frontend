@@ -1,73 +1,42 @@
-# React + TypeScript + Vite
+# Projeto Frontend - Gerenciador de Super-Heróis
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Sobre o Projeto
 
-Currently, two official plugins are available:
+Este projeto é a interface de usuário (Frontend) para um sistema de Gerenciamento de Super-Heróis. Ele funciona como uma Aplicação de Página Única (SPA) que se comunica com uma API REST para realizar suas funções.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O objetivo foi desenvolver uma interface funcional e de fácil utilização para o usuário final.
 
-## React Compiler
+## Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Listagem de Heróis**: Exibe todos os heróis cadastrados.
+* **Formulário de Criação e Edição**: Permite o cadastro e a edição de heróis através de um formulário com validação de dados.
+* **Exclusão com Confirmação**: Apresenta um diálogo de confirmação antes de excluir um herói para evitar ações acidentais.
+* **Notificações de Feedback**: Informa o usuário sobre o resultado de suas ações (sucesso ou falha) através de notificações.
+* **Roteamento**: Permite a navegação entre as diferentes telas do sistema (listagem, criação e edição).
 
-## Expanding the ESLint configuration
+## Tecnologias Utilizadas e Justificativa
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+As tecnologias foram selecionadas para construir uma aplicação moderna e eficiente.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* **React**: Biblioteca para a construção de interfaces de usuário baseadas em componentes.
+* **Vite**: Ferramenta utilizada para a criação e execução do projeto, escolhida por sua alta velocidade no desenvolvimento.
+* **TypeScript**: Adicionado ao JavaScript para garantir a segurança de tipos no código, o que ajuda a prevenir erros.
+* **Tailwind CSS**: Framework para estilização que permite a criação de layouts diretamente no código HTML de forma ágil.
+* **Shadcn/ui**: Biblioteca de componentes visuais (botões, cards, etc.) utilizada para acelerar a construção de uma interface consistente.
+* **React Hook Form & Zod**: Ferramentas usadas para o gerenciamento e validação dos formulários, garantindo que os dados enviados à API estejam corretos.
+* **Axios**: Cliente HTTP utilizado para realizar a comunicação com a API backend.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Como Executar
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Pré-requisitos:**
+* Node.js e npm
+* A API backend do projeto deve estar em execução.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**Passos:**
+1.  Clone o repositório.
+2.  Navegue até a pasta do projeto: `cd hero-frontend`
+3.  Instale as dependências: `npm install`
+4.  Execute o servidor de desenvolvimento: `npm run dev`
+5.  Abra o navegador e acesse o endereço fornecido no terminal (geralmente `http://localhost:5173`).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+> **Nota:** A URL da API pode ser configurada no arquivo `src/services/apiService.ts`.
