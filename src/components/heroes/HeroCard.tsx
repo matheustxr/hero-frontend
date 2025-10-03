@@ -49,10 +49,10 @@ export default function HeroCard({ hero, onDelete }: HeroCardProps) {
 
         <AlertDialog>
           <AlertDialogTrigger asChild>
-            <Button variant="destructive">Excluir</Button>
+            <Button variant="destructive" className='cursor-pointer'>Excluir</Button>
           </AlertDialogTrigger>
 
-          <AlertDialogContent>
+          <AlertDialogContent className='max-w-[90%] md:max-w-lg rounded'>
             <AlertDialogHeader>
               <AlertDialogTitle>Você tem certeza absoluta?</AlertDialogTitle>
 
