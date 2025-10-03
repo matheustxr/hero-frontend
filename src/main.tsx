@@ -5,6 +5,7 @@ import HomePage from '@/pages/HomePage.tsx';
 import '@/index.css'
 import App from '@/App';
 import AddHeroPage from './pages/AddHeroPage';
+import EditHeroPage from './pages/EditHeroPage';
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: "add", element: <AddHeroPage /> },
+      { path: "edit/:heroId", element: <EditHeroPage /> },
     ]
   },
 ]);
