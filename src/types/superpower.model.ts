@@ -1,5 +1,5 @@
 export interface Superpower {
   id: number;
-  name:string;
+  superpower:string;
   description: string;
 }

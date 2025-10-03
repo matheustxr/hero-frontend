@@ -4,7 +4,7 @@ import type  { HeroFormData } from '@/types/hero-form-data.model';
 import type  { Superpower } from '@/types/superpower.model';
 
 const apiClient = axios.create({
-  baseURL: 'https://localhost:7240/api',
+  baseURL: 'https://localhost:7144/api',
 });
 
 export const getAllHeroes = () => apiClient.get<Hero[]>('/heroes');

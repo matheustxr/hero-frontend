@@ -2,7 +2,7 @@ export interface Hero {
   id: number;
   name: string;
   heroName: string;
-  birthDate: string;
+  birthDate: Date;
   height: number;
   weight: number;
   superpowers: string[];
