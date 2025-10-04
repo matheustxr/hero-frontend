@@ -51,6 +51,7 @@ export default function HeroForm({ initialData }: HeroFormProps) {
     getAllSuperpowers()
       .then(response => {
         setAvailablePowers(response.data);
+        console.log("Superpoderes carregados:", response.data);
       })
       .catch(() => toast.error("Falha ao carregar superpoderes."));
   }, []);
